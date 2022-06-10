@@ -10,18 +10,20 @@ class Main:
         self.parser.add_argument("filename")
         self.parser.add_argument("--text")
         self.parser.add_argument("--graphics")
+        self.parser.add_argument("--verbose", action='store_true')
         args = self.parser.parse_args()
 
         csvfile = self.getCSV(args.filename)
-        analyser = NumericalAnalyser(csvfile)
+        analyser = NumericalAnalyser(csvfile, args.verbose)
 
         print(analyser.cartAmount())
         print(analyser.getUniqueDrivers())
         print(analyser.getDrivenHeats())
-        if self.parser.text:
-            print(analyser.getFastestDriverByTime())
-            print(analyser.getFastestDriverByHeat())
+        print(analyser.getFastestDriverByTime())
+        print(analyser.getFastestDriverByHeat())
 
+        if(args.text == "fastest"):
+            print(analyser.get_best_kart())
 
     def getCSV(self, filename):
         try:
