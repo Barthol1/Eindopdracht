@@ -16,11 +16,11 @@ class Main:
         csvfile = self.getCSV(args.filename)
         analyser = NumericalAnalyser(csvfile, args.verbose)
 
-        print(analyser.cartAmount())
-        print(analyser.getUniqueDrivers())
-        print(analyser.getDrivenHeats())
-        print(analyser.getFastestDriverByTime())
-        print(analyser.getFastestDriverByHeat())
+        # print(analyser.cartAmount())
+        # print(analyser.getUniqueDrivers())
+        # print(analyser.getDrivenHeats())
+        # print(analyser.getFastestDriverByTime())
+        # print(analyser.getFastestDriverByHeat())
         print(analyser.getScatterPlot())
 
         if(args.text == "fastest"):
