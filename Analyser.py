@@ -71,23 +71,9 @@ class NumericalAnalyser:
     @timer_func
     def getScatterPlot(self):
         filtered = self.csv
-        plot.scatter(x=filtered['HeatNumber'], y=filtered['HeatNumber'])
+        
+        amountOfHeats = amountOfHeats.groupby(filtered['NumberOfKarts'])
+        
+        plot.scatter(x=amountOfHeats, y=filtered['HeatNumber'])
         plot.title("Scatter plot between two variables X and Y")
         plot.show()
-        
-        # pd.DataFrame(['HeatNumber'])
-        # medal_data = df['HeatNumber']
-        # plot.pie(medal_data, autopct='%1.1f%%', shadow=True, startangle=140)
-        # plot.show()
-        
-        
-        
-        
-        
-        # filtered = filtered.groupby(["KartNumber"]).size()
-        # filtered.plot(kind='pie', shadow=True)
-        
-        
-              
-        # plot = pd.plot.scatter(x='Aantal karts in een heat', y='Snelste tijd in een heat', title="Scatter plot between two variables X and Y")
-        # plot.show(block=True)
