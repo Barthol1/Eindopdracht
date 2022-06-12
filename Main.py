@@ -21,6 +21,7 @@ class Main:
         print(analyser.getDrivenHeats())
         print(analyser.getFastestDriverByTime())
         print(analyser.getFastestDriverByHeat())
+        print(analyser.getScatterPlot())
 
         if(args.text == "fastest"):
             print(analyser.get_best_kart())

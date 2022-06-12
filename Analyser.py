@@ -67,3 +67,7 @@ class NumericalAnalyser:
 
         return (f'The best kart is kart: #{result}')
 
+    @timer_func
+    def getScatterPlot(self):        
+        plot = pd.plot.scatter(x='Aantal karts in een heat', y='Snelste tijd in een heat', title="Scatter plot between two variables X and Y")
+        plot.show(block=True)
